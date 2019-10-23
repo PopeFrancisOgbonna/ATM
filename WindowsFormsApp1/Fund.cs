@@ -99,12 +99,42 @@ namespace WindowsFormsApp1
 
         private void ChkUnion_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (chkUnion.Checked)
+            {
+                chkfirst.Enabled = false ;
+                chkFidelity.Enabled = false;
+                chkUba.Enabled = false;
+                chkZenith.Enabled = false;
+                chkDiamond.Enabled = false;
+            }
+            else
+            {
+                chkfirst.Enabled = true;
+                chkFidelity.Enabled = true;
+                chkZenith.Enabled = true;
+                chkDiamond.Enabled = true;
+                chkUba.Enabled = true;
+            }
         }
 
         private void ChkUba_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (chkUba.Checked)
+            {
+                chkUnion.Enabled = false;
+                chkfirst.Enabled = false;
+                chkFidelity.Enabled = false;
+                chkDiamond.Enabled = false;
+                chkZenith.Enabled = false;
+            }
+            else
+            {
+                chkUnion.Enabled = true;
+                chkfirst.Enabled = true;
+                chkFidelity.Enabled = true;
+                chkDiamond.Enabled = true;
+                chkZenith.Enabled = true;
+            }
         }
     }
 }
