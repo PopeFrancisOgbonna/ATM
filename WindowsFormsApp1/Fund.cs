@@ -79,7 +79,22 @@ namespace WindowsFormsApp1
 
         private void ChkDiamond_CheckedChanged(object sender, EventArgs e)
         {
-            if()
+            if (chkDiamond.Checked)
+            {
+                chkfirst.Enabled = false;
+                chkFidelity.Enabled = false;
+                chkDiamond.Enabled = false;
+                chkUba.Enabled = false;
+                chkUnion.Enabled = false;
+            }
+            else
+            {
+                chkfirst.Enabled = true;
+                chkFidelity.Enabled = true;
+                chkUba.Enabled = true;
+                chkUnion.Enabled = true;
+                chkZenith.Enabled = true;
+            }
         }
 
         private void ChkUnion_CheckedChanged(object sender, EventArgs e)
