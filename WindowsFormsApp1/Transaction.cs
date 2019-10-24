@@ -23,7 +23,8 @@ namespace WindowsFormsApp1
             lblDisplay.Text += number.Text;
         }
         int pin = 0, pin1 = 0;
-        double balance = 78400,amount=0;
+        public double balance;
+        double amount=0;
         private void BtnOk_Click(object sender, EventArgs e)
         {
            
