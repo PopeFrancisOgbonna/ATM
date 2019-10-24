@@ -44,5 +44,6 @@ namespace WindowsFormsApp1
         {
             lblDisplay.Text = "";
         }
+        public double balance;
     }
 }

@@ -51,18 +51,21 @@ namespace WindowsFormsApp1
             if (chkBill.Checked)
             {
                 Bills bill = new Bills();
+                bill.balance = balance;
                 bill.ShowDialog();
                 this.Close();
             }
             if (chkTransfer.Checked)
             {
                 Fund transfer = new Fund();
+                transfer.balance = balance;
                 transfer.ShowDialog();
                 this.Close();
             }
             if (chkRecharge.Checked)
             {
                 Recharge card = new Recharge();
+                card.balance = balance;
                 card.ShowDialog();
                 this.Close();
             }

@@ -96,6 +96,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Recharge.resx">
+      <DependentUpon>Recharge.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transaction.resx">
       <DependentUpon>Transaction.cs</DependentUpon>
     </EmbeddedResource>

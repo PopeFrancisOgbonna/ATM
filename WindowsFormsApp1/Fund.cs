@@ -138,6 +138,7 @@ namespace WindowsFormsApp1
         }//end of code to ensure that the user checks onlyt one option 
         UInt64 acNo = 0;//variable to hold recievers account number
         double amount = 0;//variable to hold amount to be transfered
+        public double balance;
 
         private void BtnFundClear_Click(object sender, EventArgs e)
         {
@@ -158,7 +159,7 @@ namespace WindowsFormsApp1
                 btnOk.Visible = false;
                 btnOk2.Visible = true;
 
-                if (acNo > 0 && amount != 0)
+                if (acNo > 0 && amount != 0 && amount <= balance)
                 {
                     MessageBox.Show(amount + " Has been transfered to  " + acNo + " Successfully");
                     btnOk2.Visible = false;
