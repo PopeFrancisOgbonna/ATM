@@ -157,6 +157,16 @@ namespace WindowsFormsApp1
                 amount = Convert.ToUInt64(lblDisplay.Text);
                 btnOk.Visible = false;
                 btnOk2.Visible = true;
+
+                if (acNo > 0 && amount != 0)
+                {
+                    MessageBox.Show(amount + " Has been transfered to  " + acNo + " Successfully");
+                    btnOk2.Visible = false;
+                    btnOk.Visible = true;
+                }
+                //reset Account number and Amount to enable user perform another operation instantly
+                acNo = 0;
+                amount = 0;
             }
            
             lblDisplay.Text = "";//clears the display
@@ -184,12 +194,7 @@ namespace WindowsFormsApp1
                 btnOk.Visible = true;
                 MessageBox.Show("Please enter Amount");
             }
-            if (acNo > 0 && amount != 0)
-            {
-                MessageBox.Show(amount + " Has been transfered to  " + acNo + " Successfully");
-                btnOk2.Visible = false;
-                btnOk.Visible = true;
-            }
+            
             lblDisplay.Text = "";
         }
 
