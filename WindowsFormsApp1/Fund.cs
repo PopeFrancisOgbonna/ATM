@@ -83,7 +83,7 @@ namespace WindowsFormsApp1
             {
                 chkfirst.Enabled = false;
                 chkFidelity.Enabled = false;
-                chkDiamond.Enabled = false;
+                chkZenith.Enabled = false;
                 chkUba.Enabled = false;
                 chkUnion.Enabled = false;
             }
