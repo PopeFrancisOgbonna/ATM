@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-
+        //Code to ensure the user checks only one option begins here
         private void Chkfirst_CheckedChanged(object sender, EventArgs e)
         {
             if (chkfirst.Checked)
@@ -135,6 +135,68 @@ namespace WindowsFormsApp1
                 chkDiamond.Enabled = true;
                 chkZenith.Enabled = true;
             }
+        }//end of code to ensure that the user checks onlyt one option 
+        UInt64 acNo = 0;//variable to hold recievers account number
+        double amount = 0;//variable to hold amount to be transfered
+
+        private void BtnFundClear_Click(object sender, EventArgs e)
+        {
+            lblDisplay.Text = "";//clllears the display
+        }
+
+        private void BtnOk_Click(object sender, EventArgs e)
+        {
+            if (acNo == 0)
+            {
+                MessageBox.Show("Enter Reciepient's Account Number");
+                btnOk.Visible = false;
+                btnOk2.Visible = true;
+            }
+            if (acNo != 0)
+            {
+                amount = Convert.ToUInt64(lblDisplay.Text);
+                btnOk.Visible = false;
+                btnOk2.Visible = true;
+            }
+           
+            lblDisplay.Text = "";//clears the display
+        }
+
+        private void BtnfundCancel_Click(object sender, EventArgs e)
+        {
+            //confirms the user intends to cancel a transaction 
+            var message = MessageBox.Show("Do you want to Cancel Transaction?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (message == DialogResult.Yes)
+            {
+                lblDisplay.Text = "";
+                Form1 form = new Form1();
+                form.ShowDialog();
+                this.Close();
+            }
+        }
+
+        private void BtnOk2_Click(object sender, EventArgs e)
+        {
+            if (acNo == 0)
+            {
+                acNo = Convert.ToUInt64(lblDisplay.Text);
+                btnOk2.Visible = false;
+                btnOk.Visible = true;
+                MessageBox.Show("Please enter Amount");
+            }
+            if (acNo > 0 && amount != 0)
+            {
+                MessageBox.Show(amount + " Has been transfered to  " + acNo + " Successfully");
+                btnOk2.Visible = false;
+                btnOk.Visible = true;
+            }
+            lblDisplay.Text = "";
+        }
+
+        private void Numbers(object sender, EventArgs e)//Gets the Numbers to display 
+        {
+            Button number = (Button)sender;
+            lblDisplay.Text += number.Text;
         }
     }
 }
