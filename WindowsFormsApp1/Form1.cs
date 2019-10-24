@@ -17,10 +17,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        public static double balance = 78400;
 
         private void Numbers(object sender, EventArgs e)
         {
@@ -33,6 +30,7 @@ namespace WindowsFormsApp1
             if (lblDisplay.Text.Length == 4)
             {
                 Transaction transact = new Transaction();
+                transact.balance = balance;
                 transact.ShowDialog();
                 this.Close();
             }
