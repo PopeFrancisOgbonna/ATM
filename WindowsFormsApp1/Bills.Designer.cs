@@ -55,6 +55,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnOk2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -172,6 +173,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnOk2);
             this.panel2.Controls.Add(this.btnBillClear);
             this.panel2.Controls.Add(this.btnBillCancel);
             this.panel2.Controls.Add(this.btnBillOk);
@@ -368,6 +370,19 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Insert Your Card";
             // 
+            // btnOk2
+            // 
+            this.btnOk2.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnOk2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOk2.Location = new System.Drawing.Point(245, 7);
+            this.btnOk2.Name = "btnOk2";
+            this.btnOk2.Size = new System.Drawing.Size(102, 58);
+            this.btnOk2.TabIndex = 11;
+            this.btnOk2.Text = "Ok";
+            this.btnOk2.UseVisualStyleBackColor = false;
+            this.btnOk2.Visible = false;
+            this.btnOk2.Click += new System.EventHandler(this.BtnOk2_Click);
+            // 
             // Bills
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -413,5 +428,6 @@
         private System.Windows.Forms.CheckBox chkRevenue;
         private System.Windows.Forms.CheckBox chkTax;
         private System.Windows.Forms.CheckBox chkElectric;
+        private System.Windows.Forms.Button btnOk2;
     }
 }

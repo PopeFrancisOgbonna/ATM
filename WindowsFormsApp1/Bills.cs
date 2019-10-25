@@ -22,10 +22,19 @@ namespace WindowsFormsApp1
             Button number = (Button)sender;
             lblDisplay.Text += number.Text;
         }
-
+        public double balance;
+        double amount = 0;
         private void BtnBillOk_Click(object sender, EventArgs e)
         {
-
+            if (amount == 0)
+            {
+                MessageBox.Show("Enter Amount");
+                btnBillOk.Visible = false;
+                btnOk2.Visible = true;
+            }
+           
+           
+            lblDisplay.Text = "";
         }
 
         private void BtnBillCancel_Click(object sender, EventArgs e)
@@ -44,7 +53,7 @@ namespace WindowsFormsApp1
         {
             lblDisplay.Text = "";
         }
-        public double balance;
+      
 
         private void ChkOthers_CheckedChanged(object sender, EventArgs e)
         {
@@ -164,6 +173,30 @@ namespace WindowsFormsApp1
                 chkElectric.Enabled = true;
                 chkDrive.Enabled = true;
             }
+        }
+
+        private void BtnOk2_Click(object sender, EventArgs e)
+        {
+            if (amount == 0)
+            {
+                amount = double.Parse(lblDisplay.Text);
+                btnBillOk.Visible = true;
+                btnOk2.Visible = false;
+                if (amount != 0 && amount <= balance && !chkOthers.Checked)
+                {
+                    MessageBox.Show(amount + " Has been deducted from your account for Bill Payment");
+                }
+                if(amount != 0 && amount > balance && !chkOthers.Checked)//checks that balance is not less than amount
+                {
+                    MessageBox.Show("Insuficient Balance.", "Transaction Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                if (amount != 0 && amount <= balance && chkOthers.Checked ||(amount != 0 && amount <= balance && chkOthers.Checked))
+                {
+                    MessageBox.Show("Sorry This Service is currently unavailabe", "Transaction Failed", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                }
+                amount = 0;//To ensure more transactions in sequense
+            }
+            lblDisplay.Text = "";
         }
     }
 }

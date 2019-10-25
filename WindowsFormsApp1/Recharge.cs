@@ -17,5 +17,10 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
         public double balance;
+
+        private void BtnOk2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

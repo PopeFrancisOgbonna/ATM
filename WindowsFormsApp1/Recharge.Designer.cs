@@ -32,6 +32,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblDisplay = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.chkGlo = new System.Windows.Forms.CheckBox();
+            this.chkAirtel = new System.Windows.Forms.CheckBox();
+            this.chkMobile = new System.Windows.Forms.CheckBox();
+            this.chkMtn = new System.Windows.Forms.CheckBox();
+            this.chkOthers = new System.Windows.Forms.CheckBox();
+            this.chkVoda = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -48,13 +54,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.chkGlo = new System.Windows.Forms.CheckBox();
-            this.chkAirtel = new System.Windows.Forms.CheckBox();
-            this.chkMobile = new System.Windows.Forms.CheckBox();
-            this.chkMtn = new System.Windows.Forms.CheckBox();
-            this.chkOthers = new System.Windows.Forms.CheckBox();
-            this.chkVoda = new System.Windows.Forms.CheckBox();
+            this.btnOk2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -68,7 +68,6 @@
             this.panel1.Controls.Add(this.lblDisplay);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(832, 619);
@@ -98,8 +97,75 @@
             this.panel3.Size = new System.Drawing.Size(383, 257);
             this.panel3.TabIndex = 5;
             // 
+            // chkGlo
+            // 
+            this.chkGlo.AutoSize = true;
+            this.chkGlo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkGlo.Location = new System.Drawing.Point(192, 51);
+            this.chkGlo.Name = "chkGlo";
+            this.chkGlo.Size = new System.Drawing.Size(61, 28);
+            this.chkGlo.TabIndex = 15;
+            this.chkGlo.Text = "Glo";
+            this.chkGlo.UseVisualStyleBackColor = true;
+            // 
+            // chkAirtel
+            // 
+            this.chkAirtel.AutoSize = true;
+            this.chkAirtel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAirtel.Location = new System.Drawing.Point(17, 113);
+            this.chkAirtel.Name = "chkAirtel";
+            this.chkAirtel.Size = new System.Drawing.Size(77, 28);
+            this.chkAirtel.TabIndex = 14;
+            this.chkAirtel.Text = "Airtel";
+            this.chkAirtel.UseVisualStyleBackColor = true;
+            // 
+            // chkMobile
+            // 
+            this.chkMobile.AutoSize = true;
+            this.chkMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkMobile.Location = new System.Drawing.Point(17, 177);
+            this.chkMobile.Name = "chkMobile";
+            this.chkMobile.Size = new System.Drawing.Size(103, 28);
+            this.chkMobile.TabIndex = 13;
+            this.chkMobile.Text = "9Mobile";
+            this.chkMobile.UseVisualStyleBackColor = true;
+            // 
+            // chkMtn
+            // 
+            this.chkMtn.AutoSize = true;
+            this.chkMtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkMtn.Location = new System.Drawing.Point(17, 51);
+            this.chkMtn.Name = "chkMtn";
+            this.chkMtn.Size = new System.Drawing.Size(74, 28);
+            this.chkMtn.TabIndex = 12;
+            this.chkMtn.Text = "MTN";
+            this.chkMtn.UseVisualStyleBackColor = true;
+            // 
+            // chkOthers
+            // 
+            this.chkOthers.AutoSize = true;
+            this.chkOthers.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkOthers.Location = new System.Drawing.Point(192, 177);
+            this.chkOthers.Name = "chkOthers";
+            this.chkOthers.Size = new System.Drawing.Size(91, 28);
+            this.chkOthers.TabIndex = 18;
+            this.chkOthers.Text = "Others";
+            this.chkOthers.UseVisualStyleBackColor = true;
+            // 
+            // chkVoda
+            // 
+            this.chkVoda.AutoSize = true;
+            this.chkVoda.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkVoda.Location = new System.Drawing.Point(192, 113);
+            this.chkVoda.Name = "chkVoda";
+            this.chkVoda.Size = new System.Drawing.Size(121, 28);
+            this.chkVoda.TabIndex = 17;
+            this.chkVoda.Text = "VodaCom";
+            this.chkVoda.UseVisualStyleBackColor = true;
+            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnOk2);
             this.panel2.Controls.Add(this.btnClear);
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Controls.Add(this.btnOk);
@@ -270,82 +336,17 @@
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // btnOk2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(558, 112);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Insert Your Card";
-            // 
-            // chkGlo
-            // 
-            this.chkGlo.AutoSize = true;
-            this.chkGlo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkGlo.Location = new System.Drawing.Point(192, 51);
-            this.chkGlo.Name = "chkGlo";
-            this.chkGlo.Size = new System.Drawing.Size(61, 28);
-            this.chkGlo.TabIndex = 15;
-            this.chkGlo.Text = "Glo";
-            this.chkGlo.UseVisualStyleBackColor = true;
-            // 
-            // chkAirtel
-            // 
-            this.chkAirtel.AutoSize = true;
-            this.chkAirtel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAirtel.Location = new System.Drawing.Point(17, 113);
-            this.chkAirtel.Name = "chkAirtel";
-            this.chkAirtel.Size = new System.Drawing.Size(77, 28);
-            this.chkAirtel.TabIndex = 14;
-            this.chkAirtel.Text = "Airtel";
-            this.chkAirtel.UseVisualStyleBackColor = true;
-            // 
-            // chkMobile
-            // 
-            this.chkMobile.AutoSize = true;
-            this.chkMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkMobile.Location = new System.Drawing.Point(17, 177);
-            this.chkMobile.Name = "chkMobile";
-            this.chkMobile.Size = new System.Drawing.Size(103, 28);
-            this.chkMobile.TabIndex = 13;
-            this.chkMobile.Text = "9Mobile";
-            this.chkMobile.UseVisualStyleBackColor = true;
-            // 
-            // chkMtn
-            // 
-            this.chkMtn.AutoSize = true;
-            this.chkMtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkMtn.Location = new System.Drawing.Point(17, 51);
-            this.chkMtn.Name = "chkMtn";
-            this.chkMtn.Size = new System.Drawing.Size(74, 28);
-            this.chkMtn.TabIndex = 12;
-            this.chkMtn.Text = "MTN";
-            this.chkMtn.UseVisualStyleBackColor = true;
-            // 
-            // chkOthers
-            // 
-            this.chkOthers.AutoSize = true;
-            this.chkOthers.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOthers.Location = new System.Drawing.Point(192, 177);
-            this.chkOthers.Name = "chkOthers";
-            this.chkOthers.Size = new System.Drawing.Size(91, 28);
-            this.chkOthers.TabIndex = 18;
-            this.chkOthers.Text = "Others";
-            this.chkOthers.UseVisualStyleBackColor = true;
-            // 
-            // chkVoda
-            // 
-            this.chkVoda.AutoSize = true;
-            this.chkVoda.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkVoda.Location = new System.Drawing.Point(192, 113);
-            this.chkVoda.Name = "chkVoda";
-            this.chkVoda.Size = new System.Drawing.Size(121, 28);
-            this.chkVoda.TabIndex = 17;
-            this.chkVoda.Text = "VodaCom";
-            this.chkVoda.UseVisualStyleBackColor = true;
+            this.btnOk2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnOk2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOk2.Location = new System.Drawing.Point(245, 7);
+            this.btnOk2.Name = "btnOk2";
+            this.btnOk2.Size = new System.Drawing.Size(102, 58);
+            this.btnOk2.TabIndex = 11;
+            this.btnOk2.Text = "Ok";
+            this.btnOk2.UseVisualStyleBackColor = false;
+            this.btnOk2.Click += new System.EventHandler(this.BtnOk2_Click);
             // 
             // Recharge
             // 
@@ -354,9 +355,9 @@
             this.ClientSize = new System.Drawing.Size(856, 643);
             this.Controls.Add(this.panel1);
             this.Name = "Recharge";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Recharge";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -385,12 +386,12 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox chkGlo;
         private System.Windows.Forms.CheckBox chkAirtel;
         private System.Windows.Forms.CheckBox chkMobile;
         private System.Windows.Forms.CheckBox chkMtn;
         private System.Windows.Forms.CheckBox chkOthers;
         private System.Windows.Forms.CheckBox chkVoda;
+        private System.Windows.Forms.Button btnOk2;
     }
 }
