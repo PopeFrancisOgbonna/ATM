@@ -45,5 +45,125 @@ namespace WindowsFormsApp1
             lblDisplay.Text = "";
         }
         public double balance;
+
+        private void ChkOthers_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkOthers.Checked)
+            {
+                chkRevenue.Enabled = false;
+                chkTax.Enabled = false;
+                chkWater.Enabled = false;
+                chkElectric.Enabled = false;
+                chkDrive.Enabled = false;
+            }
+            else
+            {
+                chkRevenue.Enabled = true;
+                chkTax.Enabled = true;
+                chkElectric.Enabled = true;
+                chkDrive.Enabled = true;
+                chkWater.Enabled = true;
+            }
+        }
+
+        private void ChkRevenue_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkRevenue.Checked)
+            {
+                chkOthers.Enabled = false;
+                chkWater.Enabled = false;
+                chkElectric.Enabled = false;
+                chkDrive.Enabled = false;
+                chkTax.Enabled = false;
+            }
+            else
+            {
+                chkOthers.Enabled = true;
+                chkDrive.Enabled = true;
+                chkWater.Enabled = true;
+                chkElectric.Enabled = true;
+                chkTax.Enabled = true;
+            }
+        }
+
+        private void ChkElectric_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkElectric.Checked)
+            {
+                chkOthers.Enabled = false;
+                chkRevenue.Enabled = false;
+                chkWater.Enabled = false;
+                chkTax.Enabled = false;
+                chkDrive.Enabled = false;
+            }
+            else
+            {
+                chkOthers.Enabled = true;
+                chkRevenue.Enabled =true;
+                chkDrive.Enabled = true;
+                chkWater.Enabled = true;
+                chkTax.Enabled = true;
+            }
+        }
+
+        private void ChkWater_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkWater.Checked)
+            {
+                chkElectric.Enabled = false;
+                chkOthers.Enabled = false;
+                chkRevenue.Enabled = false;
+                chkTax.Enabled = false;
+                chkDrive.Enabled = false;
+            }
+            else
+            {
+                chkElectric.Enabled = true;
+                chkOthers.Enabled = true;
+                chkTax.Enabled = true;
+                chkRevenue.Enabled = true;
+                chkDrive.Enabled = true;
+            }
+        }
+
+        private void ChkDrive_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkDrive.Checked)
+            {
+                chkElectric.Enabled = false;
+                chkWater.Enabled = false;
+                chkTax.Enabled = false;
+                chkOthers.Enabled = false;
+                chkRevenue.Enabled = false;
+            }
+            else
+            {
+                chkElectric.Enabled = true;
+                chkWater.Enabled = true;
+                chkTax.Enabled = true;
+                chkRevenue.Enabled = true;
+                chkOthers.Enabled = true;
+            }
+        }
+
+        private void ChkTax_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkTax.Checked)
+            {
+                chkOthers.Enabled = false;
+                chkWater.Enabled = false;
+                chkElectric.Enabled = false;
+                chkDrive.Enabled = false;
+                chkRevenue.Enabled = false;
+            }
+            else
+            {
+                chkOthers.Enabled = true;
+                chkRevenue.Enabled = true;
+                chkWater.Enabled = true;
+                chkElectric.Enabled = true;
+                chkDrive.Enabled = true;
+            }
+        }
     }
 }

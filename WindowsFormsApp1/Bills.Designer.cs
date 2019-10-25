@@ -32,6 +32,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblDisplay = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.chkOthers = new System.Windows.Forms.CheckBox();
+            this.chkDrive = new System.Windows.Forms.CheckBox();
+            this.chkWater = new System.Windows.Forms.CheckBox();
+            this.chkRevenue = new System.Windows.Forms.CheckBox();
+            this.chkTax = new System.Windows.Forms.CheckBox();
+            this.chkElectric = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnBillClear = new System.Windows.Forms.Button();
             this.btnBillCancel = new System.Windows.Forms.Button();
@@ -49,12 +55,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.chkOthers = new System.Windows.Forms.CheckBox();
-            this.chkDrive = new System.Windows.Forms.CheckBox();
-            this.chkWater = new System.Windows.Forms.CheckBox();
-            this.chkRevenue = new System.Windows.Forms.CheckBox();
-            this.chkTax = new System.Windows.Forms.CheckBox();
-            this.chkElectric = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -97,6 +97,78 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(383, 257);
             this.panel3.TabIndex = 5;
+            // 
+            // chkOthers
+            // 
+            this.chkOthers.AutoSize = true;
+            this.chkOthers.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkOthers.Location = new System.Drawing.Point(205, 177);
+            this.chkOthers.Name = "chkOthers";
+            this.chkOthers.Size = new System.Drawing.Size(91, 28);
+            this.chkOthers.TabIndex = 11;
+            this.chkOthers.Text = "Others";
+            this.chkOthers.UseVisualStyleBackColor = true;
+            this.chkOthers.CheckedChanged += new System.EventHandler(this.ChkOthers_CheckedChanged);
+            // 
+            // chkDrive
+            // 
+            this.chkDrive.AutoSize = true;
+            this.chkDrive.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkDrive.Location = new System.Drawing.Point(205, 113);
+            this.chkDrive.Name = "chkDrive";
+            this.chkDrive.Size = new System.Drawing.Size(173, 28);
+            this.chkDrive.TabIndex = 10;
+            this.chkDrive.Text = "Driving License";
+            this.chkDrive.UseVisualStyleBackColor = true;
+            this.chkDrive.CheckedChanged += new System.EventHandler(this.ChkDrive_CheckedChanged);
+            // 
+            // chkWater
+            // 
+            this.chkWater.AutoSize = true;
+            this.chkWater.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkWater.Location = new System.Drawing.Point(205, 51);
+            this.chkWater.Name = "chkWater";
+            this.chkWater.Size = new System.Drawing.Size(117, 28);
+            this.chkWater.TabIndex = 9;
+            this.chkWater.Text = "Water Bill";
+            this.chkWater.UseVisualStyleBackColor = true;
+            this.chkWater.CheckedChanged += new System.EventHandler(this.ChkWater_CheckedChanged);
+            // 
+            // chkRevenue
+            // 
+            this.chkRevenue.AutoSize = true;
+            this.chkRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRevenue.Location = new System.Drawing.Point(30, 113);
+            this.chkRevenue.Name = "chkRevenue";
+            this.chkRevenue.Size = new System.Drawing.Size(113, 28);
+            this.chkRevenue.TabIndex = 8;
+            this.chkRevenue.Text = "Revenue";
+            this.chkRevenue.UseVisualStyleBackColor = true;
+            this.chkRevenue.CheckedChanged += new System.EventHandler(this.ChkRevenue_CheckedChanged);
+            // 
+            // chkTax
+            // 
+            this.chkTax.AutoSize = true;
+            this.chkTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkTax.Location = new System.Drawing.Point(30, 177);
+            this.chkTax.Name = "chkTax";
+            this.chkTax.Size = new System.Drawing.Size(64, 28);
+            this.chkTax.TabIndex = 7;
+            this.chkTax.Text = "Tax";
+            this.chkTax.UseVisualStyleBackColor = true;
+            this.chkTax.CheckedChanged += new System.EventHandler(this.ChkTax_CheckedChanged);
+            // 
+            // chkElectric
+            // 
+            this.chkElectric.AutoSize = true;
+            this.chkElectric.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkElectric.Location = new System.Drawing.Point(30, 51);
+            this.chkElectric.Name = "chkElectric";
+            this.chkElectric.Size = new System.Drawing.Size(153, 28);
+            this.chkElectric.TabIndex = 6;
+            this.chkElectric.Text = "Electricity Bill";
+            this.chkElectric.UseVisualStyleBackColor = true;
+            this.chkElectric.CheckedChanged += new System.EventHandler(this.ChkElectric_CheckedChanged);
             // 
             // panel2
             // 
@@ -295,72 +367,6 @@
             this.label1.Size = new System.Drawing.Size(142, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Insert Your Card";
-            // 
-            // chkOthers
-            // 
-            this.chkOthers.AutoSize = true;
-            this.chkOthers.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOthers.Location = new System.Drawing.Point(205, 177);
-            this.chkOthers.Name = "chkOthers";
-            this.chkOthers.Size = new System.Drawing.Size(91, 28);
-            this.chkOthers.TabIndex = 11;
-            this.chkOthers.Text = "Others";
-            this.chkOthers.UseVisualStyleBackColor = true;
-            // 
-            // chkDrive
-            // 
-            this.chkDrive.AutoSize = true;
-            this.chkDrive.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkDrive.Location = new System.Drawing.Point(205, 113);
-            this.chkDrive.Name = "chkDrive";
-            this.chkDrive.Size = new System.Drawing.Size(173, 28);
-            this.chkDrive.TabIndex = 10;
-            this.chkDrive.Text = "Driving License";
-            this.chkDrive.UseVisualStyleBackColor = true;
-            // 
-            // chkWater
-            // 
-            this.chkWater.AutoSize = true;
-            this.chkWater.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkWater.Location = new System.Drawing.Point(205, 51);
-            this.chkWater.Name = "chkWater";
-            this.chkWater.Size = new System.Drawing.Size(117, 28);
-            this.chkWater.TabIndex = 9;
-            this.chkWater.Text = "Water Bill";
-            this.chkWater.UseVisualStyleBackColor = true;
-            // 
-            // chkRevenue
-            // 
-            this.chkRevenue.AutoSize = true;
-            this.chkRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkRevenue.Location = new System.Drawing.Point(30, 113);
-            this.chkRevenue.Name = "chkRevenue";
-            this.chkRevenue.Size = new System.Drawing.Size(113, 28);
-            this.chkRevenue.TabIndex = 8;
-            this.chkRevenue.Text = "Revenue";
-            this.chkRevenue.UseVisualStyleBackColor = true;
-            // 
-            // chkTax
-            // 
-            this.chkTax.AutoSize = true;
-            this.chkTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkTax.Location = new System.Drawing.Point(30, 177);
-            this.chkTax.Name = "chkTax";
-            this.chkTax.Size = new System.Drawing.Size(64, 28);
-            this.chkTax.TabIndex = 7;
-            this.chkTax.Text = "Tax";
-            this.chkTax.UseVisualStyleBackColor = true;
-            // 
-            // chkElectric
-            // 
-            this.chkElectric.AutoSize = true;
-            this.chkElectric.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkElectric.Location = new System.Drawing.Point(30, 51);
-            this.chkElectric.Name = "chkElectric";
-            this.chkElectric.Size = new System.Drawing.Size(153, 28);
-            this.chkElectric.TabIndex = 6;
-            this.chkElectric.Text = "Electricity Bill";
-            this.chkElectric.UseVisualStyleBackColor = true;
             // 
             // Bills
             // 
