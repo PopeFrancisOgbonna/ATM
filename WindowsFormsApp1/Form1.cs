@@ -15,12 +15,15 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+            timer1.Start();
         }
 
         public static double balance = 78400;
 
         private void Numbers(object sender, EventArgs e)
         {
+            timer1.Stop();
+            label1.Visible = false;
             Button number = (Button)sender;
             lblDisplay.Text += number.Text.ToString();
         }
@@ -47,11 +50,30 @@ namespace WindowsFormsApp1
             {
                 lblDisplay.Text = "";
             }
+            timer1.Start();
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
             lblDisplay.Text = "";
+        }
+        int i = 0;
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            i++;
+            if (i <= 5)
+            {
+                label1.Visible = true;
+            }
+            if (i >= 6)
+            {
+                label1.Visible = false;
+            }
+            if (i >= 9)
+            {
+                i = 0;
+            }
+
         }
     }
 }
