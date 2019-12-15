@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
 
         private void BtnOk_Click(object sender, EventArgs e)
         {
-            if (lblDisplay.Text.Length == 4)
+            if (lblDisplay.Text.Length == 4 && lblDisplay.Text.Equals("1234"))
             {
                 Transaction transact = new Transaction();
                 transact.balance = balance;
@@ -40,6 +40,7 @@ namespace WindowsFormsApp1
             else
             {
                 MessageBox.Show("Wrong pin,Please checkyour pin and try again");
+                lblDisplay.Text = "";
             }
         }
 

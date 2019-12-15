@@ -24,51 +24,59 @@ namespace WindowsFormsApp1
         }
         int pin = 0, pin1 = 0;
         public double balance;
-        double amount=0;
+        double amount = 0;
         private void BtnOk_Click(object sender, EventArgs e)
         {
+            if (chkBalance.Checked || chkBill.Checked || chkPin.Checked || chkRecharge.Checked || chkTransfer.Checked || chkWithdraw.Checked)
+            {
+                //lblDisplay.Text = "";
+                if (chkPin.Checked)
+                {
+                    pin = int.Parse(lblDisplay.Text);
+                    lblDisplay.Text = "";
+                    btnOk2.Visible = true;
+                    btnOk.Visible = false;
+                    MessageBox.Show("Confirm pin and click OK)");
+                }
+
+                if (chkBalance.Checked)
+                {
+                    MessageBox.Show("Your Account Balance is " + balance);
+                }
+                if (chkWithdraw.Checked)
+                {
+                    MessageBox.Show("Enter Amount");
+                    btnOk.Visible = false;
+                    btnOk2.Visible = true;
+                }
+                if (chkBill.Checked)
+                {
+                    Bills bill = new Bills();
+                    bill.balance = balance;
+                    bill.ShowDialog();
+                    this.Close();
+                }
+                if (chkTransfer.Checked)
+                {
+                    Fund transfer = new Fund();
+                    transfer.balance = balance;
+                    transfer.ShowDialog();
+                    this.Close();
+                }
+                if (chkRecharge.Checked)
+                {
+                    Recharge card = new Recharge();
+                    card.balance = balance;
+                    card.ShowDialog();
+                    this.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an Option");
+            }
            
-            //lblDisplay.Text = "";
-            if (chkPin.Checked)
-            { 
-               pin = int.Parse(lblDisplay.Text);
-                lblDisplay.Text = "";
-                btnOk2.Visible = true;
-                btnOk.Visible = false;
-                MessageBox.Show("Confirm pin and click OK)");
-            }
            
-            if(chkBalance.Checked)
-            {
-                MessageBox.Show("Your Account Balance is "+balance);
-            }
-            if (chkWithdraw.Checked)
-            {
-                MessageBox.Show("Enter Amount");
-                btnOk.Visible = false;
-                btnOk2.Visible = true;
-            }
-            if (chkBill.Checked)
-            {
-                Bills bill = new Bills();
-                bill.balance = balance;
-                bill.ShowDialog();
-                this.Close();
-            }
-            if (chkTransfer.Checked)
-            {
-                Fund transfer = new Fund();
-                transfer.balance = balance;
-                transfer.ShowDialog();
-                this.Close();
-            }
-            if (chkRecharge.Checked)
-            {
-                Recharge card = new Recharge();
-                card.balance = balance;
-                card.ShowDialog();
-                this.Close();
-            }
         }
 
         private void BtnTransactCancel_Click(object sender, EventArgs e)
@@ -187,7 +195,7 @@ namespace WindowsFormsApp1
                 chkBalance.Enabled = true;
                 chkBill.Enabled = true;
                 chkRecharge.Enabled = true;
-                chkWithdraw.Enabled = true;
+                chkTransfer.Enabled = true;
             }
         }
 
@@ -213,30 +221,38 @@ namespace WindowsFormsApp1
 
         private void BtnOk2_Click(object sender, EventArgs e)
         {
-            if (chkPin.Checked && pin != 0)
-            {              
-                pin1 = int.Parse(lblDisplay.Text);
-                btnOk.Visible = true;
-                btnOk2.Visible = false;
-                if (pin1 != 0)
-                {
-                    MessageBox.Show("Pin changed");
-                }
-            }
-            if (chkWithdraw.Checked)
+            try
             {
-                amount = double.Parse(lblDisplay.Text);
-                btnOk.Visible = true ;
-                btnOk2.Visible = false ;
-                if (amount <= balance)
+                if (chkPin.Checked && pin != 0)
                 {
-                    MessageBox.Show(amount + " has been deducted from your account");
+                    pin1 = int.Parse(lblDisplay.Text);
+                    btnOk.Visible = true;
+                    btnOk2.Visible = false;
+                    if (pin1 != 0)
+                    {
+                        MessageBox.Show("Pin changed");
+                    }
                 }
-                else
+                if (chkWithdraw.Checked)
                 {
-                    MessageBox.Show("Insurficient Balance");
+                    amount = double.Parse(lblDisplay.Text);
+                    btnOk.Visible = true;
+                    btnOk2.Visible = false;
+                    if (amount <= balance)
+                    {
+                        MessageBox.Show(amount + " has been deducted from your account");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Insurficient Balance");
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+           
             lblDisplay.Text = "";
         }
     }

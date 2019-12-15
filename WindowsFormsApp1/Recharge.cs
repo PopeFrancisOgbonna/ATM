@@ -21,35 +21,57 @@ namespace WindowsFormsApp1
 
         private void BtnOk2_Click(object sender, EventArgs e)
         {
-            if (amount == 0)
+            try
             {
-                amount = double.Parse(lblDisplay.Text);
-                btnOk.Visible = true;
-                btnOk2.Visible = false;
-                if (amount != 0 && amount <= balance && !chkOthers.Checked)
+                if (amount == 0)
                 {
-                    MessageBox.Show(amount + " Has been deducted from your account for Recharge Card Payment ");
+                    amount = double.Parse(lblDisplay.Text);
+                    btnOk.Visible = true;
+                    btnOk2.Visible = false;
+                    if (amount != 0 && amount <= balance && !chkOthers.Checked)
+                    {
+                        MessageBox.Show(amount + " Has been deducted from your account for Recharge Card Payment ");
+                    }
+                    if (amount != 0 && amount > balance && !chkOthers.Checked)//checks that balance is not less than amount
+                    {
+                        MessageBox.Show("Insuficient Balance.", "Transaction Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    if (amount != 0 && amount <= balance && chkOthers.Checked || (amount != 0 && amount <= balance && chkOthers.Checked))
+                    {
+                        MessageBox.Show("Sorry This Service is currently unavailabe", "Transaction Failed", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                    }
+                    amount = 0;//To ensure more transactions in sequense
                 }
-                if (amount != 0 && amount > balance && !chkOthers.Checked)//checks that balance is not less than amount
-                {
-                    MessageBox.Show("Insuficient Balance.", "Transaction Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                if (amount != 0 && amount <= balance && chkOthers.Checked || (amount != 0 && amount <= balance && chkOthers.Checked))
-                {
-                    MessageBox.Show("Sorry This Service is currently unavailabe", "Transaction Failed", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
-                }
-                amount = 0;//To ensure more transactions in sequense
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+           
             lblDisplay.Text = "";
         }
 
         private void BtnOk_Click(object sender, EventArgs e)
         {
-            if (amount == 0)
+            if (chkAirtel.Checked || chkGlo.Checked || chkMobile.Checked || chkMtn.Checked || chkOthers.Checked || chkVoda.Checked)
             {
-                MessageBox.Show("Enter Amount");
-                btnOk.Visible = false;
-                btnOk2.Visible = true;
+                try
+                {
+                    if (amount == 0)
+                    {
+                        MessageBox.Show("Enter Amount");
+                        btnOk.Visible = false;
+                        btnOk2.Visible = true;
+                    }
+                }
+                catch (Exception a)
+                {
+                    MessageBox.Show(a.Message.ToString());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please choose a Network");
             }
             lblDisplay.Text = "";
         }

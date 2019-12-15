@@ -79,7 +79,7 @@
             this.lblDisplay.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDisplay.Location = new System.Drawing.Point(134, 346);
             this.lblDisplay.Name = "lblDisplay";
-            this.lblDisplay.Size = new System.Drawing.Size(383, 63);
+            this.lblDisplay.Size = new System.Drawing.Size(403, 63);
             this.lblDisplay.TabIndex = 6;
             this.lblDisplay.Tag = "";
             this.lblDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -95,9 +95,9 @@
             this.panel3.Controls.Add(this.chkBalance);
             this.panel3.Controls.Add(this.chkWithdraw);
             this.panel3.Controls.Add(this.chkPin);
-            this.panel3.Location = new System.Drawing.Point(134, 86);
+            this.panel3.Location = new System.Drawing.Point(134, 112);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(383, 257);
+            this.panel3.Size = new System.Drawing.Size(403, 230);
             this.panel3.TabIndex = 5;
             // 
             // chkRecharge
@@ -202,7 +202,7 @@
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(143, 416);
+            this.panel2.Location = new System.Drawing.Point(157, 416);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(356, 199);
             this.panel2.TabIndex = 4;

@@ -147,27 +147,41 @@ namespace WindowsFormsApp1
 
         private void BtnOk_Click(object sender, EventArgs e)
         {
-            if (acNo == 0)
+            if (chkDiamond.Checked || chkfirst.Checked || chkfirst.Checked || chkUba.Checked || chkUnion.Checked || chkZenith.Checked)
             {
-                MessageBox.Show("Enter Reciepient's Account Number");
-                btnOk.Visible = false;
-                btnOk2.Visible = true;
-            }
-            if (acNo != 0)
-            {
-                amount = Convert.ToUInt64(lblDisplay.Text);
-                btnOk.Visible = false;
-                btnOk2.Visible = true;
-
-                if (acNo > 0 && amount != 0 && amount <= balance)
+                try
                 {
-                    MessageBox.Show(amount + " Has been transfered to  " + acNo + " Successfully");
-                    btnOk2.Visible = false;
-                    btnOk.Visible = true;
+                    if (acNo == 0)
+                    {
+                        MessageBox.Show("Enter Reciepient's Account Number");
+                        btnOk.Visible = false;
+                        btnOk2.Visible = true;
+                    }
+                    if (acNo != 0)
+                    {
+                        amount = Convert.ToUInt64(lblDisplay.Text);
+                        btnOk.Visible = false;
+                        btnOk2.Visible = true;
+
+                        if (acNo > 0 && amount != 0 && amount <= balance)
+                        {
+                            MessageBox.Show(amount + " Has been transfered to  " + acNo + " Successfully");
+                            btnOk2.Visible = false;
+                            btnOk.Visible = true;
+                        }
+                        //reset Account number and Amount to enable user perform another operation instantly
+                        acNo = 0;
+                        amount = 0;
+                    }
                 }
-                //reset Account number and Amount to enable user perform another operation instantly
-                acNo = 0;
-                amount = 0;
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Select a Bank");
             }
            
             lblDisplay.Text = "";//clears the display
@@ -188,12 +202,19 @@ namespace WindowsFormsApp1
 
         private void BtnOk2_Click(object sender, EventArgs e)
         {
-            if (acNo == 0)
+            try
             {
-                acNo = Convert.ToUInt64(lblDisplay.Text);
-                btnOk2.Visible = false;
-                btnOk.Visible = true;
-                MessageBox.Show("Please enter Amount");
+                if (acNo == 0)
+                {
+                    acNo = Convert.ToUInt64(lblDisplay.Text);
+                    btnOk2.Visible = false;
+                    btnOk.Visible = true;
+                    MessageBox.Show("Please enter Amount");
+                }
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show(a.Message.ToString());
             }
             
             lblDisplay.Text = "";

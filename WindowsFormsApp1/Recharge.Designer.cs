@@ -94,9 +94,9 @@
             this.panel3.Controls.Add(this.chkMtn);
             this.panel3.Controls.Add(this.chkOthers);
             this.panel3.Controls.Add(this.chkVoda);
-            this.panel3.Location = new System.Drawing.Point(136, 84);
+            this.panel3.Location = new System.Drawing.Point(136, 111);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(383, 257);
+            this.panel3.Size = new System.Drawing.Size(383, 230);
             this.panel3.TabIndex = 5;
             // 
             // chkGlo
@@ -201,7 +201,7 @@
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(144, 406);
+            this.panel2.Location = new System.Drawing.Point(147, 406);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(356, 199);
             this.panel2.TabIndex = 4;
